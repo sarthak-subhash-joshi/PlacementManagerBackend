@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const workoutRoutes=require('./Routes/Workouts')
 const mongoose=require('mongoose');
+const cors = require('cors');
 
 const app=express()
 
@@ -10,6 +11,8 @@ const app=express()
 // app.get('/',(req,res)=>{
 //     res.json({msg:"Hello Sarthak Joshi"})
 // })
+
+app.use(cors());
 
 app.use(express.json())
 
