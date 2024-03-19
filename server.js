@@ -1,22 +1,21 @@
 require('dotenv').config()
 
 const express = require('express')
-const workoutRoutes=require('./Routes/Workouts')
+const studentRecordRoutes=require('./Routes/studentRecordRoutes')
+const placementRecordRoutes=require('./Routes/placementRecordRoutes')
+
 const mongoose=require('mongoose');
 const cors = require('cors');
 
 const app=express()
 
-// // Routes
-// app.get('/',(req,res)=>{
-//     res.json({msg:"Hello Sarthak Joshi"})
-// })
-
 app.use(cors());
 
 app.use(express.json())
 
-app.use('/api',workoutRoutes)
+app.use('/api/student_record/',studentRecordRoutes)
+app.use('/api/placement_record/',placementRecordRoutes)
+
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
