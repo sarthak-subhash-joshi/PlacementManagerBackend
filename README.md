@@ -1,5 +1,5 @@
 
-# Flexyog
+# Placement Manager
 
 
 Welcome to Flexyog, our dynamic data management platform designed to provide a seamless user experience. We've built the frontend using ReactJS and Bootstrap, ensuring a modern and responsive interface. For efficient data handling, our backend relies on Express, creating a RESTful API that supports essential operations such as GET, PUT, and DELETE

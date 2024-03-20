@@ -1,5 +1,6 @@
 // Importing StudentRecord model
 const StudentRecordModel=require('../models/studentRecordModel')
+const PlacementRecordModel = require('../models/placementRecordModel');
 const mongoose=require('mongoose')
 
 // get all StudentRecordModels
@@ -78,6 +79,9 @@ const createStudentRecord= async(req,res)=>{
 // delete a StudentRecordModel
 const deleteStudentRecord= async(req,res)=>{
     const {id}=req.params
+
+     // Delete associated placement records first
+     await PlacementRecordModel.deleteMany({ studentId: id })
 
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error:"No such record exists"})
