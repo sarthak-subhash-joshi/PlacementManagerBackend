@@ -3,6 +3,7 @@ const StudentRecordModel=require('../models/studentRecordModel')
 const PlacementRecordModel = require('../models/placementRecordModel');
 const mongoose=require('mongoose')
 
+
 // get all StudentRecordModels
 
 // const getStudentRecords = async(req,res)=>{
@@ -118,10 +119,14 @@ const updateStudentRecord=async (req,res)=>{
 
 }
 
+  
+
+
+
 module.exports={
     createStudentRecord,
     getStudentRecords,
     getStudentRecord,
     deleteStudentRecord,
-    updateStudentRecord
+    updateStudentRecord,
 }

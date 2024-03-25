@@ -16,6 +16,9 @@ app.use(express.json())
 app.use('/api/student_record/',studentRecordRoutes)
 app.use('/api/placement_record/',placementRecordRoutes)
 
+var BulkDataUploadsRoute=require('./Routes/BulkDataUploadsRoutes')
+app.use('/',BulkDataUploadsRoute)
+
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
